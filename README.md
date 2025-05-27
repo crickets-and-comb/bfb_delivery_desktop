@@ -10,7 +10,7 @@ You need ``node.js`` installed. For a Mac, you can install it directly from the 
     brew install node
 ```
 
-You also need ``nvm``:
+You also need ``nvm`` for version control:
 
 ```bash
     brew install nvm
