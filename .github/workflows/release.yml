@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  CI_CD:
-    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/CI_CD.yml@feature/KalebCoberly/bare_ui_setup
+  QC:
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@feature/KalebCoberly/bare_ui_setup
 
   release:
-    needs: CI_CD
+    needs: QC
     runs-on: ubuntu-latest
     name: Build and Release
 
