@@ -23,3 +23,9 @@ To get started, install the app from the project files:
 ```bash
     npm install
 ```
+
+Then, to start the app, run:
+
+```bash
+    npm start
+```

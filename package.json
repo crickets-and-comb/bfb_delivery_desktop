@@ -4,6 +4,7 @@
   "description": "Desktop GUI for bfb_delivery app.",
   "main": "index.js",
   "scripts": {
+    "start": "electron .",
     "test": "make test"
   },
   "repository": {
@@ -31,5 +32,8 @@
   "volta": {
     "node": "23.11.1",
     "npm": "10.9.2"
+  },
+  "devDependencies": {
+    "electron": "^36.3.1"
   }
 }
