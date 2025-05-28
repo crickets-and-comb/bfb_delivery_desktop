@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "format": "npx prettier --write .",
-    "lint": "npx npmPkgJsonlint . && npx prettier --check .",
+    "lint": "npx npm-package-json-lint . && npx prettier --check .",
     "security": "npm audit && npm doctor",
     "start": "electron .",
     "test": "npx playwright test",
