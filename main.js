@@ -8,7 +8,7 @@ function createWindow () {
     webPreferences: { nodeIntegration: true }
   });
 
-  win.loadFile('There.html');
+  win.loadFile('src/There.html');
 }
 
 app.whenReady().then(createWindow);
