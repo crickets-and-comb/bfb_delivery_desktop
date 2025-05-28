@@ -8,8 +8,8 @@
     "lint": "npx npm-package-json-lint . && npx prettier --check .",
     "security": "npm audit && npm doctor",
     "start": "electron .",
-    "test": "DISABLE_ELECTRON_TESTS=false npx playwright test",
-    "test:ui": "DISABLE_ELECTRON_TESTS=false npx playwright test tests/basic-ui.test.js",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test tests/basic-ui.test.js",
     "dist": "electron-builder",
     "act": "act workflow_dispatch -W .github/workflows/CI_CD.yml --defaultbranch feature/KalebCoberly/bare_ui_setup"
   },
@@ -65,5 +65,8 @@
     "linux": {
       "target": "AppImage"
     }
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }
