@@ -64,7 +64,8 @@
     },
     "linux": {
       "target": "AppImage"
-    }
+    },
+    "publish": "never"
   },
   "dependencies": {
     "cross-env": "^7.0.3"
