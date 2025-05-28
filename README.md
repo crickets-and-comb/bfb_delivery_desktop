@@ -102,3 +102,13 @@ To check for dependency vulnerabilities and environment issues, run the security
 ```bash
     npm run security
 ```
+
+#### Run tests
+
+Now you're ready to run tests. You should write tests for each feature you implement, as others before you have. For every change you make, make sure all existing tests still pass:
+
+```bash
+    npm run test
+```
+
+This runs all the tests under the `tests/` directory.
