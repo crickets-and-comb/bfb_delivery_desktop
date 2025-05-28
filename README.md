@@ -8,11 +8,11 @@ Before you start developing, you need some one-time setups.
 
 ### Install volta
 
-You need `node.js` installed, but you need to control your versions for different packages. We use ``volta`` for that. Install it directly, so you don't get shadowed versions interfering from installing with another tool like ``homebrew`` for instance. Visit [https://docs.volta.sh/guide/getting-started](https://docs.volta.sh/guide/getting-started) for installation instructions.
+You need `node.js` installed, but you need to control your versions for different packages. We use `volta` for that. Install it directly, so you don't get shadowed versions interfering from installing with another tool like `homebrew` for instance. Visit [https://docs.volta.sh/guide/getting-started](https://docs.volta.sh/guide/getting-started) for installation instructions.
 
 ### Install node and npm
 
-Then use volta to install ``node`` and ``npm``:
+Then use volta to install `node` and `npm`:
 
 ```bash
     volta install node
@@ -26,9 +26,9 @@ Doublecheck you're using the volta installations of these:
     which npm
 ```
 
-If the paths returned are not under the ``.volta`` folder, then you may need to uninstall other installations and/or move the volta installations to the beginning of your PATH.
+If the paths returned are not under the `.volta` folder, then you may need to uninstall other installations and/or move the volta installations to the beginning of your PATH.
 
-You can also check the versions you've installed, but if installed correctly, once you start your dev workflow (next section) by running ``npm install`` from within the project root, you should be running with the versions pinned in the ``project.json`` file.
+You can also check the versions you've installed, but if installed correctly, once you start your dev workflow (next section) by running `npm install` from within the project root, you should be running with the versions pinned in the `project.json` file.
 
 ## Dev workflow
 
