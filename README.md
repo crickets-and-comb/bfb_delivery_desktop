@@ -38,4 +38,4 @@ To build the app and install it locally, run:
     npm run dist
 ```
 
-Once the build completes, the installation file will be in the ``dist/`` folder. For a Mac, it will be a ``.dmg`` file, for Windows a ``.exe``, and a ``.AppImage`` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
+Once the build completes, it will have created a ``dist/`` folder in your project files if it didn't already exist, and the installation file will be in there. For a Mac, it will be a ``.dmg`` file, for Windows a ``.exe``, and a ``.AppImage`` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
