@@ -54,7 +54,7 @@ Start by installing the dependencies from the project files:
     npm ci
 ```
 
-This uses the `package-lock.json` to install exact versions. This is what is used when testing and releasing on GitHub.
+This uses the `package-lock.json` to install exact versions. This is ostensibly what was used when last merged to main.
 
 That's a good place to start, but it is recommended to look for updates.
 

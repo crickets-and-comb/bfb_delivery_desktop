@@ -1,0 +1,36 @@
+name: CI-CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "0 1 * * 0" # Weekly on Sunday at 1:00 a.m.
+
+jobs:
+  qc-and-test:
+    runs-on: ubuntu-latest
+    name: Run Linting, Security, Tests, and Dist Build
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node with Volta
+        uses: volta-cli/action@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run security check
+        run: npm run security
+
+      - name: Run tests
+        run: npm run test
+    
+      - name: Build the distribution
+        run: npm run dist
