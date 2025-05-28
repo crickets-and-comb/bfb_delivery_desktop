@@ -121,7 +121,21 @@ It never hurts to try the app out yourself again. Run it from the project files 
 
 ### QC before pushing
 
-You can run the GitHub Actions workflows using `act`. You'll need to [install act](https://nektosact.com/installation/) and [Docker](https://docs.docker.com/engine/install/) to do that, and have Docker running.
+You should do a comprehensive rebuild and test before pushing to a PR. We need to save resources and be confident our changes will not fail builds on GitHub.
+
+#### Run the full QC suite
+
+Run the full QC suite from install to test to dist build:
+
+```bash
+    npm run full
+```
+
+Then install and open the distribution you just built, and give it a try.
+
+#### Run the GitHub workflow
+
+You can run the GitHub Actions workflow using `act`. You'll need to [install act](https://nektosact.com/installation/) and [Docker](https://docs.docker.com/engine/install/) to do that, and have Docker running.
 
 Then, run it:
 
@@ -131,4 +145,4 @@ Then, run it:
 
 This will run the entire QC workflow outlined above from the workflow in `.github/workflows`. This is a good way to test the workflow itself and be confident your PR will pass on GitHub.
 
-That said, watch out because it will not run GUI tests, and this is a GUI project.
+That said, watch out because it will not run GUI tests, and this is a GUI project. So, it's always good to try the running the app from the project files and the dist, as outlined in the beginning.

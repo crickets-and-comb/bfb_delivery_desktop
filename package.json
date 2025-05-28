@@ -4,13 +4,14 @@
   "description": "Desktop GUI for bfb_delivery app.",
   "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "format": "npx prettier --write .",
     "lint": "npx npm-package-json-lint . && npx prettier --check .",
     "security": "npm audit && npm doctor",
-    "start": "electron .",
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/basic-ui.test.js",
     "dist": "electron-builder --publish=never",
+    "full": "npm install && npm run lint && npm run security && npm run test && npm run dist",
     "act": "act workflow_dispatch -W .github/workflows/QC.yml --defaultbranch feature/KalebCoberly/bare_ui_setup --input DISABLE_ELECTRON_TESTS=true",
     "release": "electron-builder --publish=always"
   },
