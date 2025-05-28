@@ -8,7 +8,7 @@ const skipElectronTests = process.env.DISABLE_ELECTRON_TESTS === "true";
 test.describe("Electron basic app test", () => {
   test.beforeAll(async ({}, testInfo) => {
     if (skipElectronTests) {
-      test.skip(true, "Skipping Electron tests in CI/headless mode");
+      test.skip(true, "Skipping Electron tests.");
     }
 
     app = await electron.launch({ args: ["."] });

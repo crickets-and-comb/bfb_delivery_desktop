@@ -114,3 +114,21 @@ Now you're ready to run tests. You should write tests for each feature you imple
 ```
 
 This runs all the tests under the `tests/` directory.
+
+#### Try the app
+
+It never hurts to try the app out yourself again. Run it from the project files first then rebuild the dist and reinstall on your machine, as outlined in the beginning.
+
+### QC before pushing
+
+You can run the GitHub Actions workflows using `act`. You'll need to [install act](https://nektosact.com/installation/) and [Docker](https://docs.docker.com/engine/install/) to do that, and have Docker running.
+
+Then, run it:
+
+```bash
+    npm run act
+```
+
+This will run the entire QC workflow outlined above from the workflow in `.github/workflows`. This is a good way to test the workflow itself and be confident your PR will pass on GitHub.
+
+That said, watch out because it will not run GUI tests, and this is a GUI project.

@@ -4,12 +4,43 @@ on:
   push:
     branches:
       - main
+  workflow_call:
+    inputs:
+      DISABLE_ELECTRON_TESTS:
+        description: 'Set to "true" to skip Electron UI tests.'
+        type: boolean
+        default: false
   workflow_dispatch:
+    inputs:
+      DISABLE_ELECTRON_TESTS:
+        description: 'Set to "true" to skip Electron UI tests.'
+        type: boolean
+        default: false
   schedule:
     - cron: "0 1 * * 0" # Weekly on Sunday at 1:00 a.m.
 
+defaults:
+  run:
+    shell: bash -el {0}
+
+env:
+  DISABLE_ELECTRON_TESTS_DEFAULT: false
+
 jobs:
+  set-inputs:
+    name: Set Inputs
+    runs-on: ubuntu-latest
+    outputs:
+      DISABLE_ELECTRON_TESTS: ${{ steps.set-test-skip.outputs.DISABLE_ELECTRON_TESTS }}
+
+    steps:
+      - name: Set Test Skip
+        id: set-test-skip
+        run: |
+          echo "DISABLE_ELECTRON_TESTS=${{ inputs.DISABLE_ELECTRON_TESTS || env.DISABLE_ELECTRON_TESTS_DEFAULT }}" >> $GITHUB_OUTPUT
+
   qc-and-test:
+    needs: set-inputs
     runs-on: ubuntu-latest
     name: Run Linting, Security, Tests, and Dist Build
 
@@ -29,8 +60,13 @@ jobs:
       - name: Run security check
         run: npm run security
 
+      - name: Start virtual display (Xvfb)
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1920x1080x24 &
+
       - name: Run tests (skip Electron UI tests in headless)
-        run: npx cross-env DISABLE_ELECTRON_TESTS=true npm run test
+        run: npx cross-env DISABLE_ELECTRON_TESTS=${{ needs.set-inputs.outputs.DISABLE_ELECTRON_TESTS }} npm run test
 
       - name: Test-build the distribution
         run: npm run dist
