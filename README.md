@@ -46,21 +46,33 @@ You need these to run tests.
 
 Assuming you've cloned the repo and are working from within its root folder, there are a number of commands you can use to try out your project files and new features.
 
-### Try installation
+### Install dependencies
 
-Start by installing the app from the project files:
+Start by installing the dependencies from the project files:
+
+```bash
+    npm ci
+```
+
+This uses the `package-lock.json` to install exact versions. This is what is used when testing and releasing on GitHub.
+
+That's a good place to start, but it is recommended to look for updates. If you want to install dependencies but be open to updates while avoiding breaking changes, recommended, run this instead:
 
 ```bash
     npm install
 ```
 
-To open the app from your local project files, run:
+This will install dependencies using the looser semantic versioning pins in `package.json`. If new minor or patch updates are installed, it will update the `package-lock.json` file.
+
+#### Run app
+
+To run the app from your local project files, run:
 
 ```bash
     npm start
 ```
 
-To build the app and install it locally, first run:
+To build the app and install it, instead of running from your project files, first run:
 
 ```bash
     npm run dist
