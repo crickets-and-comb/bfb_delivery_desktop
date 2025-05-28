@@ -2,6 +2,8 @@
 
 Desktop GUI for bfb_delivery tool.
 
+UNDER CONSTRUCTION!!
+
 ## Dev setup
 
 Before you start developing, you need some one-time setups.
