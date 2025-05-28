@@ -58,7 +58,7 @@ This uses the `package-lock.json` to install exact versions. This is what is use
 
 That's a good place to start, but it is recommended to look for updates.
 
-If you want to install dependencies but be open to updates while avoiding breaking changes, run this:
+If you want to install dependencies with any available updates while avoiding breaking changes, run this:
 
 ```bash
     npm install
