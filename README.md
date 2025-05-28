@@ -42,8 +42,11 @@ Once the build completes, it will have created a `dist/` folder in your project 
 
 ### QC before commits
 
-To be sure your code is properly formatted to adhere to our conventions, run the linter before making commits:
+To be sure your code is properly formatted to adhere to our conventions, run the formatter and the linter before making commits:
 
 ```bash
+    npm run format
     npm run lint
 ```
+
+Format will edit the code to meet our conventions, while lint will check and fail if the code does not meet conventions. Release builds and PR builds run lint without running format, so you want to be sure you've formatted before opening PRs or pushing to them.
