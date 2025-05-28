@@ -6,21 +6,35 @@ Desktop GUI for bfb_delivery tool.
 
 Before you start developing, you need some one-time setups.
 
-You need `node.js` installed. You can install it directly from the Node.js page, or you can use Homebrew if you have that installed:
+### Install volta
+
+You need `node.js` installed, but you need to control your versions for different packages. We use ``volta`` for that. Install it directly, so you don't get shadowed versions interfering from installing with another tool like ``homebrew`` for instance. Visit [https://docs.volta.sh/guide/getting-started](https://docs.volta.sh/guide/getting-started) for installation instructions.
+
+### Install node and npm
+
+Then use volta to install ``node`` and ``npm``:
 
 ```bash
-    brew install node
+    volta install node
+    volta install npm
 ```
 
-You also need `volta` for version control. Again, you can install from the homepage, or use Homebrew:
+Doublecheck you're using the volta installations of these:
 
 ```bash
-    brew install volta
+    which node
+    which npm
 ```
+
+If the paths returned are not under the ``.volta`` folder, then you may need to uninstall other installations and/or move the volta installations to the beginning of your PATH.
+
+You can also check the versions you've installed, but if installed correctly, once you start your dev workflow (next section) by running ``npm install`` from within the project root, you should be running with the versions pinned in the ``project.json`` file.
 
 ## Dev workflow
 
-To try out your local version, install the app from the project files:
+Assuming you've cloned the repo and are working from within its root folder, there are a number of commands you can use to try out your project files and new features.
+
+Start by installing the app from the project files:
 
 ```bash
     npm install
@@ -32,13 +46,13 @@ To open the app from your local project files, run:
     npm start
 ```
 
-To build the app and install it locally, run:
+To build the app and install it locally, first run:
 
 ```bash
     npm run dist
 ```
 
-Once the build completes, it will have created a `dist/` folder in your project files if it didn't already exist, and the installation file will be in there. For a Mac, it will be a `.dmg` file, for Windows a `.exe`, and a `.AppImage` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
+Then, once the build completes, it will have created a `dist/` folder in your project files if it didn't already exist, and the installation file will be in there. For a Mac, it will be a `.dmg` file, for Windows a `.exe`, and a `.AppImage` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
 
 ### QC before commits
 
