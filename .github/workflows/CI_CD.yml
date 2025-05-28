@@ -29,8 +29,8 @@ jobs:
       - name: Run security check
         run: npm run security
 
-      - name: Run tests
-        run: npm run test
+      - name: Run tests (skip Electron UI tests in headless)
+        run: cross-env DISABLE_ELECTRON_TESTS=true npm run test
 
       - name: Build the distribution
         run: npm run dist
