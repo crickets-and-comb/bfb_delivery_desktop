@@ -34,6 +34,12 @@ You can also check the versions you've installed, but if installed correctly, on
 
 Assuming you've cloned the repo and are working from within its root folder, there are a number of commands you can use to try out your project files and new features.
 
+### Potential first step in each terminal session
+
+When using VS Code's terminal, for instance, there may be additional items added to the `$PATH` in front of `volta`'s binaries, and those may include `node` or `npm` installations that shadow your volta-versioned installations. This will be a problem. If you have this problem, and you're running a Mac, one solution is to add an export to your bash/zsh profile that puts volta back at the front of the path (per Volta's offical installation instructions linked above), and source this profile again every time you open a terminal in VS Code or whatever IDE is causing this issue.
+
+### Typical workflow commands.
+
 Start by installing the app from the project files:
 
 ```bash
