@@ -20,14 +20,22 @@ You also need ``volta`` for version control. Again, you can install from the hom
 
 ## Dev workflow
 
-To get started developing, install the app from the project files:
+To try out your local version, install the app from the project files:
 
 ```bash
     npm install
 ```
 
-Then, to start the app locally, run:
+To open the app from your local project files, run:
 
 ```bash
     npm start
 ```
+
+To build the app and install it locally, run:
+
+```bash
+    npm run dist
+```
+
+Once the build completes, the installation file will be in the ``dist/`` folder. For a Mac, it will be a ``.dmg`` file, for Windows a ``.exe``, and a ``.AppImage`` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
