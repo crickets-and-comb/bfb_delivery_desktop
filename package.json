@@ -10,7 +10,8 @@
     "start": "electron .",
     "test": "cross-env DISABLE_ELECTRON_TESTS=false npx playwright test",
     "test:ui": "cross-env DISABLE_ELECTRON_TESTS=false npx playwright test tests/basic-ui.test.js",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "run-act": "act workflow_dispatch -W .github/workflows/CI_CD.yml --defaultbranch feature/KalebCoberly/bare_ui_setup"
   },
   "repository": {
     "type": "git",
