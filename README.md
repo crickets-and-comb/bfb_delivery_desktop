@@ -56,7 +56,9 @@ Start by installing the dependencies from the project files:
 
 This uses the `package-lock.json` to install exact versions. This is what is used when testing and releasing on GitHub.
 
-That's a good place to start, but it is recommended to look for updates. If you want to install dependencies but be open to updates while avoiding breaking changes, recommended, run this instead:
+That's a good place to start, but it is recommended to look for updates.
+
+If you want to install dependencies but be open to updates while avoiding breaking changes, run this:
 
 ```bash
     npm install
