@@ -31,6 +31,6 @@ jobs:
 
       - name: Run tests
         run: npm run test
-    
+
       - name: Build the distribution
         run: npm run dist
