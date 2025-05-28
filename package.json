@@ -10,7 +10,7 @@
     "start": "electron .",
     "test": "npx playwright test",
     "test:ui": "npx playwright test tests/basic-ui.test.js",
-    "dist": "electron-builder",
+    "dist": "electron-builder -- --publish=never",
     "act": "act workflow_dispatch -W .github/workflows/CI_CD.yml --defaultbranch feature/KalebCoberly/bare_ui_setup"
   },
   "repository": {
