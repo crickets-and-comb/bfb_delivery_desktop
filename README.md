@@ -1,18 +1,18 @@
 # bfb_delivery_desktop
-Desktop GUI for bfb_delivery tool.
 
+Desktop GUI for bfb_delivery tool.
 
 ## Dev setup
 
 Before you start developing, you need some one-time setups.
 
-You need ``node.js`` installed. You can install it directly from the Node.js page, or you can use Homebrew if you have that installed:
+You need `node.js` installed. You can install it directly from the Node.js page, or you can use Homebrew if you have that installed:
 
 ```bash
     brew install node
 ```
 
-You also need ``volta`` for version control. Again, you can install from the homepage, or use Homebrew:
+You also need `volta` for version control. Again, you can install from the homepage, or use Homebrew:
 
 ```bash
     brew install volta
@@ -38,7 +38,7 @@ To build the app and install it locally, run:
     npm run dist
 ```
 
-Once the build completes, it will have created a ``dist/`` folder in your project files if it didn't already exist, and the installation file will be in there. For a Mac, it will be a ``.dmg`` file, for Windows a ``.exe``, and a ``.AppImage`` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
+Once the build completes, it will have created a `dist/` folder in your project files if it didn't already exist, and the installation file will be in there. For a Mac, it will be a `.dmg` file, for Windows a `.exe`, and a `.AppImage` file for Linux. Just run the file as you would for any downloaded app-installation file on your machine.
 
 ### QC before commits
 
