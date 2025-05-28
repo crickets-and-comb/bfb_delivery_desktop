@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "test": "make test"
+    "test": "test",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "npm": "10.9.2"
   },
   "devDependencies": {
-    "electron": "^36.3.1"
+    "electron": "^36.3.1",
+    "electron-builder": "^26.0.12"
   }
 }
