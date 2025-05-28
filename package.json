@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "format": "npx prettier --write .",
-    "lint": "npx npmPkgJsonlint .",
+    "lint": "npx npmPkgJsonlint . && npx prettier --check .",
     "dist": "electron-builder"
   },
   "repository": {
