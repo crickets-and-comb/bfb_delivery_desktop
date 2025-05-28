@@ -13,4 +13,4 @@ jobs:
 
   QC:
     needs: close-external-prs
-    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@feature/KalebCoberly/bare_ui_setup
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main

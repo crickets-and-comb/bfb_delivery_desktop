@@ -5,7 +5,7 @@ on:
 
 jobs:
   QC:
-    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@feature/KalebCoberly/bare_ui_setup
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main
 
   release:
     needs: QC
