@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/crickets-and-comb/bfb_delivery_desktop/issues"
   },
-  "homepage": "https://github.com/crickets-and-comb/bfb_delivery_desktop#readme"
+  "homepage": "https://github.com/crickets-and-comb/bfb_delivery_desktop#readme",
+  "volta": {
+    "node": "23.11.1",
+    "npm": "10.9.2"
+  }
 }
