@@ -1,0 +1,28 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  QC:
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main
+
+  release:
+    needs: QC
+    runs-on: ubuntu-latest
+    name: Build and Release
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node using Volta
+        uses: volta-cli/action@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and Publish with electron-builder
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm run release

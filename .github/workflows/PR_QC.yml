@@ -1,0 +1,16 @@
+name: PR-QC
+
+on:
+  pull_request_target:
+
+jobs:
+  close-external-prs:
+    uses: crickets-and-comb/shared/.github/workflows/block_outside_PRs.yml@main
+    with:
+      ALLOWED_ORG: "crickets-and-comb"
+    secrets:
+      ORG_READ_TOKEN: ${{ secrets.ORG_READ_TOKEN }}
+
+  QC:
+    needs: close-external-prs
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main
