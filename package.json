@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/crickets-and-comb/bfb_delivery_desktop#readme",
   "volta": {
-    "node": "24.1.0",
-    "npm": "11.4.1"
+    "node": "24.3.0",
+    "npm": "11.4.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
