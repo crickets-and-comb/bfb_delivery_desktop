@@ -147,4 +147,4 @@ Then, run it:
 
 This will run the entire QC workflow outlined above from the workflow in `.github/workflows`. This is a good way to test the workflow itself and be confident your PR will pass on GitHub.
 
-That said, watch out because it will not run GUI tests, and this is a GUI project. So, it's always good to try the running the app from the project files and the dist, as outlined in the beginning.
+That said, watch out because it will not run GUI tests, and this is a GUI project. So, it's always good to try running the app from the project files and the dist, as outlined in the beginning.
