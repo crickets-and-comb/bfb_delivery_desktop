@@ -14,7 +14,7 @@ jobs:
 
   QC:
     needs: close-external-prs
-    uses: ./.github/workflows/QC.yml
+    uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main
     with:
       # Passing PR merge ref to avoid using forked PR branch head ref allowing malicious workflows to run.
       REF_TO_CHECKOUT: ${{ format('refs/pull/{0}/merge', github.event.pull_request.number) }}
