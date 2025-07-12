@@ -42,7 +42,7 @@ env:
 
 jobs:
   validate-inputs:
-    name: Set Inputs
+    name: Validate and set inputs
     runs-on: ubuntu-latest
     outputs:
       DISABLE_ELECTRON_TESTS: ${{ steps.validate-disable-electron-tests.outputs.DISABLE_ELECTRON_TESTS }}
