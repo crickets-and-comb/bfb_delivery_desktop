@@ -72,7 +72,7 @@ jobs:
         uses: volta-cli/action@v4
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run lint
         run: npm run lint
