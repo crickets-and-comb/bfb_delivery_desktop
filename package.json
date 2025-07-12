@@ -1,6 +1,6 @@
 {
   "name": "bfb_delivery_desktop",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Desktop GUI for bfb_delivery app.",
   "main": "main.js",
   "scripts": {
