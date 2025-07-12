@@ -37,9 +37,6 @@ defaults:
   run:
     shell: bash -el {0}
 
-env:
-  DISABLE_ELECTRON_TESTS_DEFAULT: false
-
 jobs:
   validate-inputs:
     name: Validate and set inputs
