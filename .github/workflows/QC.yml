@@ -75,7 +75,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.validate-ref.outputs.ref }}
+          ref: ${{ steps.validate-ref.outputs.REF_TO_CHECKOUT }}
           token: ${{ secrets.CHECKOUT_SHARED }}
 
       - name: Set up Node with Volta
