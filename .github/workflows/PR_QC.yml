@@ -9,7 +9,6 @@ jobs:
     with:
       ALLOWED_ORG: "crickets-and-comb"
     secrets:
-      CHECKOUT_SHARED: ${{ secrets.CHECKOUT_SHARED }}
       ORG_READ_TOKEN: ${{ secrets.ORG_READ_TOKEN }}
 
   QC:
