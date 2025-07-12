@@ -24,6 +24,10 @@ on:
         description: 'Set to "true" to skip Electron UI tests.'
         type: boolean
         default: false
+      REF_TO_CHECKOUT:
+        description: "The git ref to checkout."
+        required: true
+        type: string
   schedule:
     - cron: "0 1 * * 0" # Weekly on Sunday at 1:00 a.m.
 
