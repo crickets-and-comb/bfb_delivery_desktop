@@ -59,7 +59,7 @@ jobs:
             echo "DISABLE_ELECTRON_TESTS is not set, using default: $DISABLE_ELECTRON_TESTS_DEFAULT"
             DISABLE_ELECTRON_TESTS=$DISABLE_ELECTRON_TESTS_DEFAULT
           fi
-          
+
           echo "DISABLE_ELECTRON_TESTS=$DISABLE_ELECTRON_TESTS" >> $GITHUB_OUTPUT
 
       - name: Validate and set REF_TO_CHECKOUT
