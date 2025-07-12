@@ -33,12 +33,16 @@ on:
   schedule:
     - cron: "0 1 * * 0" # Weekly on Sunday at 1:00 a.m.
 
+env:
+  DISABLE_ELECTRON_TESTS_DEFAULT: false
+  REF_TO_CHECKOUT_DEFAULT: "refs/heads/main"
+
 defaults:
   run:
     shell: bash -el {0}
 
 jobs:
-  validate-inputs:
+  validate-and-set-inputs:
     name: Validate and set inputs
     runs-on: ubuntu-latest
     outputs:
@@ -51,6 +55,11 @@ jobs:
         env:
           DISABLE_ELECTRON_TESTS: ${{ inputs.DISABLE_ELECTRON_TESTS }}
         run: |
+          if [[ -z "$DISABLE_ELECTRON_TESTS" ]]; then
+            echo "DISABLE_ELECTRON_TESTS is not set, using default: $DISABLE_ELECTRON_TESTS_DEFAULT"
+            DISABLE_ELECTRON_TESTS=$DISABLE_ELECTRON_TESTS_DEFAULT
+          fi
+          
           echo "DISABLE_ELECTRON_TESTS=$DISABLE_ELECTRON_TESTS" >> $GITHUB_OUTPUT
 
       - name: Validate and set REF_TO_CHECKOUT
@@ -58,7 +67,11 @@ jobs:
         env:
           REF_TO_CHECKOUT: ${{ inputs.REF_TO_CHECKOUT }}
         run: |
-          echo "input REF_TO_CHECKOUT=$REF_TO_CHECKOUT"
+          if [[ -z "$REF_TO_CHECKOUT" ]]; then
+            echo "REF_TO_CHECKOUT is not set, using default: $REF_TO_CHECKOUT_DEFAULT"
+            REF_TO_CHECKOUT=$REF_TO_CHECKOUT_DEFAULT
+          fi
+
           if [[ ! "$REF_TO_CHECKOUT" =~ ^[A-Za-z0-9._/-]+$ ]]; then
             echo "Invalid ref: $REF_TO_CHECKOUT"
             exit 1
@@ -68,7 +81,7 @@ jobs:
           echo "REF_TO_CHECKOUT=$REF_TO_CHECKOUT" >> $GITHUB_OUTPUT
 
   qc-and-test:
-    needs: validate-inputs
+    needs: validate-and-set-inputs
     runs-on: ubuntu-latest
     name: Run Linting, Security, Tests, and Dist Build
 
@@ -76,7 +89,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: ${{ needs.validate-inputs.outputs.REF_TO_CHECKOUT }}
+          ref: ${{ needs.validate-and-set-inputs.outputs.REF_TO_CHECKOUT }}
           token: ${{ secrets.CHECKOUT_SHARED }}
 
       - name: Set up Node with Volta
@@ -97,7 +110,7 @@ jobs:
           Xvfb :99 -screen 0 1920x1080x24 &
 
       - name: Run tests (skip Electron UI tests in headless)
-        run: npx cross-env DISABLE_ELECTRON_TESTS=${{ needs.validate-inputs.outputs.DISABLE_ELECTRON_TESTS }} npm run test
+        run: npx cross-env DISABLE_ELECTRON_TESTS=${{ needs.validate-and-set-inputs.outputs.DISABLE_ELECTRON_TESTS }} npm run test
 
       - name: Test-build the distribution
         run: npm run dist
