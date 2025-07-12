@@ -10,10 +10,14 @@ on:
         description: 'Set to "true" to skip Electron UI tests.'
         type: boolean
         default: false
-      # REF_TO_CHECKOUT:
-      #   description: "The git ref to checkout."
-      #   required: true
-      #   type: string
+      REF_TO_CHECKOUT:
+        description: "The git ref to checkout."
+        required: true
+        type: string
+    secrets:
+      CHECKOUT_SHARED:
+        description: "Org or repo checkout token."
+        required: true
   workflow_dispatch:
     inputs:
       DISABLE_ELECTRON_TESTS:
@@ -54,8 +58,9 @@ jobs:
           echo "Checking out ref: ${{ inputs.REF_TO_CHECKOUT }}"
       - name: Checkout repo
         uses: actions/checkout@v4
-        # with:
-        #   ref: ${{ inputs.REF_TO_CHECKOUT }}
+        with:
+          ref: ${{ inputs.REF_TO_CHECKOUT }}
+          token: ${{ secrets.CHECKOUT_SHARED }}
 
       - name: Set up Node with Volta
         uses: volta-cli/action@v4
