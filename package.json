@@ -12,7 +12,7 @@
     "test:ui": "npx playwright test tests/basic-ui.test.js",
     "dist": "electron-builder --publish=never",
     "full": "npm install && npm run lint && npm run security && npm run test && npm run dist",
-    "act": "bash -c 'CHECKOUT_SHARED=$(grep ^CHECKOUT_SHARED= .env | cut -d= -f2-) && env CHECKOUT_SHARED=$CHECKOUT_SHARED act workflow_call -W .github/workflows/QC.yml --defaultbranch main --input DISABLE_ELECTRON_TESTS=true --input REF_TO_CHECKOUT=refs/heads/main -s CHECKOUT_SHARED=$CHECKOUT_SHARED'",
+    "act": "./scripts/run_act.sh",
     "release": "electron-builder --publish=always"
   },
   "repository": {
