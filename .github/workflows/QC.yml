@@ -51,6 +51,8 @@ jobs:
     steps:
       - name: Validate DISABLE_ELECTRON_TESTS
         id: validate-disable-electron-tests
+        env:
+          DISABLE_ELECTRON_TESTS: ${{ inputs.DISABLE_ELECTRON_TESTS }}
         run: |
           echo "DISABLE_ELECTRON_TESTS=$DISABLE_ELECTRON_TESTS" >> $GITHUB_OUTPUT
 
