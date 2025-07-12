@@ -12,7 +12,8 @@ on:
         default: false
       REF_TO_CHECKOUT:
         description: "The git ref to checkout."
-        required: true
+        required: false
+        default: "refs/heads/main"
         type: string
     secrets:
       CHECKOUT_SHARED:
@@ -26,7 +27,8 @@ on:
         default: false
       REF_TO_CHECKOUT:
         description: "The git ref to checkout."
-        required: true
+        required: false
+        default: "refs/heads/main"
         type: string
   schedule:
     - cron: "0 1 * * 0" # Weekly on Sunday at 1:00 a.m.
