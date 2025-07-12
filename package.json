@@ -1,6 +1,6 @@
 {
   "name": "bfb_delivery_desktop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Desktop GUI for bfb_delivery app.",
   "main": "main.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "test:ui": "npx playwright test tests/basic-ui.test.js",
     "dist": "electron-builder --publish=never",
     "full": "npm install && npm run lint && npm run security && npm run test && npm run dist",
-    "act": "act workflow_dispatch -W .github/workflows/QC.yml --defaultbranch main --input DISABLE_ELECTRON_TESTS=true",
+    "act": "./scripts/run_act.sh",
     "release": "electron-builder --publish=always"
   },
   "repository": {
