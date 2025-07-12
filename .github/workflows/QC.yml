@@ -58,6 +58,7 @@ jobs:
         env:
           REF_TO_CHECKOUT: ${{ inputs.REF_TO_CHECKOUT }}
         run: |
+          echo "input REF_TO_CHECKOUT=$REF_TO_CHECKOUT"
           if [[ ! "$REF_TO_CHECKOUT" =~ ^[A-Za-z0-9._/-]+$ ]]; then
             echo "Invalid ref: $REF_TO_CHECKOUT"
             exit 1
