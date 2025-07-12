@@ -16,7 +16,6 @@ if [[ ! "$CHECKOUT_SHARED" =~ ^[A-Za-z0-9_=-]+$ ]]; then
   exit 1
 fi
 
-
 REF_TO_CHECKOUT=${1:-}
 if [[ -z "$REF_TO_CHECKOUT" ]]; then
   GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")
