@@ -10,6 +10,10 @@ on:
         description: 'Set to "true" to skip Electron UI tests.'
         type: boolean
         default: false
+      # REF_TO_CHECKOUT:
+      #   description: "The git ref to checkout."
+      #   required: true
+      #   type: string
   workflow_dispatch:
     inputs:
       DISABLE_ELECTRON_TESTS:
@@ -45,8 +49,13 @@ jobs:
     name: Run Linting, Security, Tests, and Dist Build
 
     steps:
+      - name: Debug Ref Info
+        run: |
+          echo "Checking out ref: ${{ inputs.REF_TO_CHECKOUT }}"
       - name: Checkout repo
         uses: actions/checkout@v4
+        # with:
+        #   ref: ${{ inputs.REF_TO_CHECKOUT }}
 
       - name: Set up Node with Volta
         uses: volta-cli/action@v4
