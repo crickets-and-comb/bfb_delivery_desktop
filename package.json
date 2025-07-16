@@ -1,6 +1,6 @@
 {
   "name": "bfb_delivery_desktop",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Desktop GUI for bfb_delivery app.",
   "main": "main.js",
   "scripts": {
@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/crickets-and-comb/bfb_delivery_desktop#readme",
   "volta": {
-    "node": "24.4.0",
+    "node": "24.4.1",
     "npm": "11.4.2"
   },
   "devDependencies": {
