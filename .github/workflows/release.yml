@@ -6,6 +6,8 @@ on:
 jobs:
   QC:
     uses: crickets-and-comb/bfb_delivery_desktop/.github/workflows/QC.yml@main
+    secrets:
+      CHECKOUT_SHARED: ${{ secrets.CHECKOUT_SHARED }}
 
   release:
     needs: QC
